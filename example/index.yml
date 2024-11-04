@@ -1,0 +1,5 @@
+endDevices:
+  # Unique identifier of the end device (lowercase, alphanumeric with dashes, max 36 characters)
+  - example-oscar-bravo-charlie-DH22
+  - example-MiroScandal-R3C8
+  - example-laserstar-W321
