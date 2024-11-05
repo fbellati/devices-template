@@ -24,7 +24,7 @@ dataType: istantaneous
 outputDataFormat: ascii
 
 # Material is optional
-material: 'plastic'
+material: 'metal and plastic'
 
 # Dimensions are optional in cm. and weight in kg.
 dimensions:
@@ -75,37 +75,37 @@ firmwareVersions:
       - 'Sett2024'
 
     profiles:
+      # Unique identifier of the profile (lowercase, alphanumeric with dashes, max 36 characters)
       default:
-        # Unique identifier of the profile (lowercase, alphanumeric with dashes, max 36 characters)
         sensorComponents:
           ed_irradiance_sensor:
             ObservedPropertyName: Downwelling irradiance at x nanometers
-            ObservedPropertyDefinition:  http://vocab.nerc.ac.uk/collection/R03/current/DOWN_IRRADIANCE/
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/R03/current/DOWN_IRRADIANCE/
             ObservedPropertyDescription: The vertical component of light at the specified wavelength travelling downwards.
             ObservedPropertyIso: 'unknown'
-            observationType:?
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
             unitOfMeasurement:
               unitOfMeasurementName: Watts per square metre per nanometre 
               unitOfMeasurementSymbol: W/m^2/nm
               unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UWNM/
 
           ld_radiance_sensor:
-            ObservedPropertyName: downwelling_radiance_per_unit_wavelength_in_air
-            ObservedPropertyDefinition:http://vocab.nerc.ac.uk/collection/P07/current/HLKZ2VSL/
+            ObservedPropertyName: Downwelling_radiance_per_unit_wavelength_in_air
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P07/current/HLKZ2VSL/
             ObservedPropertyDescription: Downwelling radiation is radiation from above. It does not mean "net downward". The sign convention is that "upwelling" is positive upwards and "downwelling" is positive downwards. A coordinate variable for radiation wavelength should be given the standard name radiation_wavelength. Radiance is the radiative flux in a particular direction, per unit of solid angle. The direction from which it is coming must be specified, for instance with a coordinate of zenith_angle. If the radiation does not depend on direction, a standard name of isotropic radiance should be chosen instead.
             ObservedPropertyIso: 'unknown'
-            observationType:?
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
             unitOfMeasurement:
               unitOfMeasurementName: Watts per square metre per nanometre per steradian
               unitOfMeasurementSymbol: W/m^2/nm/sr
               unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UWNS/
 
           lu_radiance_sensor:
-            ObservedPropertyName: upwelling_radiance_per_unit_wavelength_in_air
+            ObservedPropertyName: Upwelling_radiance_per_unit_wavelength_in_air
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P07/current/0F95XPEG/
             ObservedPropertyDescription: Upwelling radiation is radiation from below. It does not mean "net upward". The sign convention is that "upwelling" is positive upwards and "downwelling" is positive downwards. Radiance is the radiative flux in a particular direction, per unit of solid angle. The direction towards which it is going must be specified, for instance with a coordinate of zenith_angle. If the radiation does not depend on direction, a standard name of isotropic radiance should be chosen instead. A coordinate variable for radiation wavelength should be given the standard name radiation_wavelength.
             ObservedPropertyIso: 'unknown'
-            observationType: ???
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
             unitOfMeasurement:
               unitOfMeasurementName: Watts per square metre per nanometre per steradian
               unitOfMeasurementSymbol: W/m^2/nm/sr
@@ -116,11 +116,10 @@ firmwareVersions:
             ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P01/current/RRSPSTR1/
             ObservedPropertyDescription: The water-leaving radiance at an unspecified wavelength, Lw(λ), corrected for bidirectional effects of the air-sea interface and sub-surface light field, and normalised by downwelling solar irradiance, Ed(λ), just above the sea surface (Franz, NASA Goddard Space Flight Center).
             ObservedPropertyIso: 'unknown'
-            observationType: ???
-            observationType: ???
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
               unitOfMeasurementName: inverse steradians
               unitOfMeasurementSymbol: [sr⁻¹]
-              unitOfMeasurementDefinition: ???
+              unitOfMeasurementDefinition: https://qudt.org/vocab/unit/SR
         
         codec: WISPstation.yml
 
