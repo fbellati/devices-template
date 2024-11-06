@@ -10,7 +10,12 @@ vendors:
     manufacturer: Comune di Venezia
     vendorID: 100
     website: https://www.comune.venezia.it/
-    
+
+  - uid: paloma-ts
+    manufacturer: CNR-ISMAR TS
+    vendorID: 105
+    website: https://www.ismar.cnr.it/cosa-facciamo/infrastrutture-oceanografiche/meda-paloma/
+
   - uid: waterinsight
     manufacturer: Water Insight
     vendorID: 105
