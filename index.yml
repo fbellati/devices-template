@@ -13,7 +13,7 @@ vendors:
 
   - uid: paloma-ts
     manufacturer: CNR-ISMAR TS
-    vendorID: 105
+    vendorID: 106
     website: https://www.ismar.cnr.it/cosa-facciamo/infrastrutture-oceanografiche/meda-paloma/
 
   - uid: waterinsight
@@ -40,3 +40,8 @@ vendors:
     manufacturer: develogic GmbH
     vendorID: 104
     website: https://develogic.com/
+
+  - uid: gillinstruments
+    manufacturer: Gill Instruments Limited
+    vendorID: 106
+    website: https://gillinstruments.com/
