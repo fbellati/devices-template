@@ -45,3 +45,9 @@ vendors:
     manufacturer: CNR-ISMAR TS
     vendorID: 107
     website: https://www.ismar.cnr.it/cosa-facciamo/infrastrutture-oceanografiche/meda-paloma/
+    
+  - uid: baranidesign
+    manufacturer: BARANI DESIGN Technologies s.r.o.
+    vendorID: 108
+    website: https://allmeteo.com/
+    
