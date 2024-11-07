@@ -148,6 +148,17 @@ firmwareVersions:
                 unitOfMeasurementSymbol: S/m
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
 
+           virt-combined-sensor-paloma-pressure:
+            ObservedPropertyName: PRES
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/AHGT/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: {vardesc}
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Decibars
+                unitOfMeasurementSymbol: dbar
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPDB/?_profile=nvs&_mediatype=application/rdf+xml
+
           virt-combined-sensor-paloma-salinity:
             ObservedPropertyName: SAL
             ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/PSAL/?_profile=nvs&_mediatype=application/rdf+xml
@@ -158,7 +169,52 @@ firmwareVersions:
                 unitOfMeasurementName: Grams per kilogram
                 unitOfMeasurementSymbol: g/kg
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UGKG/?_profile=nvs&_mediatype=application/rdf+xml
-             
+ 
+           virt-combined-sensor-paloma-density:
+            ObservedPropertyName: DENS
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/SIGT/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Density of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: unknown
+                unitOfMeasurementSymbol: uk
+                unitOfMeasurementDefinition: unknown
+                
+ 
+           virt-combined-sensor-paloma-oxygen:
+            ObservedPropertyName: OOXYG
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/DOXY/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Dissolved oxygen parameters in the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Milligrams per litre
+                unitOfMeasurementSymbol: mg/l
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UMGL/?_profile=nvs&_mediatype=application/rdf+xml                
+
+           virt-combined-sensor-paloma-oxygensat:
+            ObservedPropertyName: OOXSAT
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/DOXY/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Dissolved oxygen parameters in the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: percent
+                unitOfMeasurementSymbol: %
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPCT/?_profile=nvs&_mediatype=application/rdf+xml
+
+           virt-combined-sensor-paloma-turbidity:
+            ObservedPropertyName: TURB1
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/R03/current/TURBIDITY/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: seawater turbidity
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Nephelometric Turbidity Units 
+                unitOfMeasurementSymbol: NTU
+                unitOfMeasurementDefinition: Nephelometric Turbidity Units
+
                 
         codec: virt-combined-sensor-paloma-01A.yml
         
