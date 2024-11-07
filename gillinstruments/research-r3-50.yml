@@ -1,7 +1,7 @@
 uid: r350
 deviceName: research-r3-50
 partNumber: unknown
-description: 3-axis ultrasonic anemometers (wind sensors) with 50Hz output rate
+description: 3-axis ultrasonic anemometer with 50Hz output rate
 
 # MANDATORY Physical or virtual
 sensorType: phyisical
@@ -16,12 +16,12 @@ imageURL: 'https://gillinstruments.com/wp-content/uploads/2021/08/HS-50-1.webp'
 #metadata: /virt-combined-sensor-01
 
 # Mandatory, in minutes
-minimumReportingInterval: 5
+minimumReportingInterval: 0.00003
 
 # These data are optional - dataType can be istantaneous, cumulative measurement, various
 temporaryStorage: 'yes'
 dataType: istantaneous
-outputDataFormat: ascii
+outputDataFormat: csv
 
 # Material is optional
 material: 'aluminium/carbon fibre construction'
@@ -61,65 +61,56 @@ compliances:
   
 # Hardware versions (optional, use when you have revisions)
 hwversions:
-  - version: 'Sett2024'
+  - version: 'V2.2.0'
     numeric: 1
 
 # Firmware versions (at least one is mandatory)
 firmwareVersions:
   # Firmware version
-  v1.0beta:
+  V2.2.0:
     numeric: 1
   
     # Corresponding hardware versions (optional)
     hardwareVersions:
-      - 'Sett2024'
+      - 'V2.2.0'
 
     profiles:
       # Unique identifier of the profile (lowercase, alphanumeric with dashes, max 36 characters)
       default:
         sensorComponents:
-          ed_irradiance_sensor:
-            ObservedPropertyName: Downwelling irradiance at x nanometers
-            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/R03/current/DOWN_IRRADIANCE/
-            ObservedPropertyDescription: The vertical component of light at the specified wavelength travelling downwards.
+          u_axis_velocity_sensor:
+            ObservedPropertyName: x_wind
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P07/current/CFSN0042/
+            ObservedPropertyDescription: "x" indicates a vector component along the grid x-axis, positive with increasing x. Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.)
             ObservedPropertyIso: 'unknown'
-            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            ObservedPropertyProperties: {"note":"The X-Direction is aligned with the N spar"}
             unitOfMeasurement:
-              unitOfMeasurementName: Watts per square metre per nanometre 
-              unitOfMeasurementSymbol: W/m^2/nm
-              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UWNM/
+              unitOfMeasurementName: Metres per second
+              unitOfMeasurementSymbol: m/s
+              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
 
-          ld_radiance_sensor:
-            ObservedPropertyName: Downwelling_radiance_per_unit_wavelength_in_air
-            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P07/current/HLKZ2VSL/
-            ObservedPropertyDescription: Downwelling radiation is radiation from above. It does not mean "net downward". The sign convention is that "upwelling" is positive upwards and "downwelling" is positive downwards. A coordinate variable for radiation wavelength should be given the standard name radiation_wavelength. Radiance is the radiative flux in a particular direction, per unit of solid angle. The direction from which it is coming must be specified, for instance with a coordinate of zenith_angle. If the radiation does not depend on direction, a standard name of isotropic radiance should be chosen instead.
+          v_axis_velocity_sensor:
+            ObservedPropertyName: y_wind
+            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P07/current/CFSN0043/
+            ObservedPropertyDescription: "y" indicates a vector component along the grid y-axis, positive with increasing y. Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.)
             ObservedPropertyIso: 'unknown'
-            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            ObservedPropertyProperties: {"note":"The X-Direction si aligned with the N spar"}
             unitOfMeasurement:
-              unitOfMeasurementName: Watts per square metre per nanometre per steradian
-              unitOfMeasurementSymbol: W/m^2/nm/sr
-              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UWNS/
+              unitOfMeasurementName: Metres per second
+              unitOfMeasurementSymbol: m/s
+              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
 
-          lu_radiance_sensor:
-            ObservedPropertyName: Upwelling_radiance_per_unit_wavelength_in_air
-            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P07/current/0F95XPEG/
-            ObservedPropertyDescription: Upwelling radiation is radiation from below. It does not mean "net upward". The sign convention is that "upwelling" is positive upwards and "downwelling" is positive downwards. Radiance is the radiative flux in a particular direction, per unit of solid angle. The direction towards which it is going must be specified, for instance with a coordinate of zenith_angle. If the radiation does not depend on direction, a standard name of isotropic radiance should be chosen instead. A coordinate variable for radiation wavelength should be given the standard name radiation_wavelength.
+          w_axis_velocity_sensor:
+            ObservedPropertyName: Upward air velocity
+            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/standard_name/upward_air_velocity/
+            ObservedPropertyDescription: A velocity is a vector quantity. "Upward" indicates a vector component which is positive when directed upward (negative downward). Upward air velocity is the vertical component of the 3D air velocity vector. The standard name downward_air_velocity may be used for a vector component with the opposite sign convention.
             ObservedPropertyIso: 'unknown'
-            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
-            unitOfMeasurement:
-              unitOfMeasurementName: Watts per square metre per nanometre per steradian
-              unitOfMeasurementSymbol: W/m^2/nm/sr
-              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UWNS/
-
-          reflectance_sensor:
-            ObservedPropertyName: Remote sensing reflectance of electromagnetic radiation (unspecified single wavelength) {Rrs} from the water body
-            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P01/current/RRSPSTR1/
-            ObservedPropertyDescription: The water-leaving radiance at an unspecified wavelength, Lw(λ), corrected for bidirectional effects of the air-sea interface and sub-surface light field, and normalised by downwelling solar irradiance, Ed(λ), just above the sea surface (Franz, NASA Goddard Space Flight Center).
-            ObservedPropertyIso: 'unknown'
-            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation
-              unitOfMeasurementName: inverse steradians
-              unitOfMeasurementSymbol: [sr⁻¹]
-              unitOfMeasurementDefinition: https://qudt.org/vocab/unit/SR
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+              unitOfMeasurementName: Metres per second
+              unitOfMeasurementSymbol: m/s
+              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
         
         codec: research-r3-50-codec.yml
 
