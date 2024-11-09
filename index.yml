@@ -51,3 +51,7 @@ vendors:
     vendorID: 108
     website: https://allmeteo.com/
     
+  - uid: campbellsci
+    manufacturer: Campbell Scientific, Inc.
+    vendorID: 109
+    website: https://www.campbellsci.com/
