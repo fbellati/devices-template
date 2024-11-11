@@ -115,17 +115,7 @@ firmwareVersions:
       default:
         # Unique identifier of the profile (lowercase, alphanumeric with dashes, max 36 characters)
         sensorComponents:
-          virt-combined-sensor-paloma-atmco2:
-            ObservedPropertyName: ACO2
-            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/ACO2/?_profile=nvs&_mediatype=application/rdf+xml
-            ObservedPropertyDescription: Carbon monoxide and dioxide concentrations in the atmosphere
-            # - ObservedPropertyIso: 'unknown'
-            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
-            unitOfMeasurement:
-                unitOfMeasurementName: Parts per million
-                unitOfMeasurementSymbol: ppm
-                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPPM/?_profile=nvs&_mediatype=application/rdf+xml
-                
+
           virt-combined-sensor-paloma-wtemp:
             ObservedPropertyName: TEMP
             ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/TEMP/?_profile=nvs&_mediatype=application/rdf+xml
@@ -136,7 +126,7 @@ firmwareVersions:
                 unitOfMeasurementName: Degrees Celsius
                 unitOfMeasurementSymbol: degC
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPAA/?_profile=nvs&_mediatype=application/rdf+xml
-                
+
           virt-combined-sensor-paloma-cond:
             ObservedPropertyName: COND
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/CNDC/?_profile=nvs&_mediatype=application/rdf+xml
@@ -148,7 +138,7 @@ firmwareVersions:
                 unitOfMeasurementSymbol: S/m
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
 
-           virt-combined-sensor-paloma-pressure:
+          virt-combined-sensor-paloma-pressure:
             ObservedPropertyName: PRES
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/AHGT/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: {vardesc}
@@ -165,35 +155,36 @@ firmwareVersions:
             ObservedPropertyDescription: Salinity of the water column
             # - ObservedPropertyIso: 'unknown'
             observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            # TODO confirm unitOfMeasurement
             unitOfMeasurement:
-                unitOfMeasurementName: Grams per kilogram
-                unitOfMeasurementSymbol: g/kg
-                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UGKG/?_profile=nvs&_mediatype=application/rdf+xml
+                unitOfMeasurementName: Practical salinity units
+                unitOfMeasurementSymbol: PSU
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/PSUX/?_profile=nvs&_mediatype=application/rdf+xml
  
-           virt-combined-sensor-paloma-density:
+          virt-combined-sensor-paloma-density:
             ObservedPropertyName: DENS
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/SIGT/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: Density of the water column
             # - ObservedPropertyIso: 'unknown'
             observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            # TODO confirm unitOfMeasurement
             unitOfMeasurement:
                 unitOfMeasurementName: unknown
                 unitOfMeasurementSymbol: uk
                 unitOfMeasurementDefinition: unknown
-                
- 
-           virt-combined-sensor-paloma-oxygen:
+
+          virt-combined-sensor-paloma-oxygen:
             ObservedPropertyName: OOXYG
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/DOXY/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: Dissolved oxygen parameters in the water column
             # - ObservedPropertyIso: 'unknown'
             observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
             unitOfMeasurement:
-                unitOfMeasurementName: Milligrams per litre
-                unitOfMeasurementSymbol: mg/l
+                unitOfMeasurementName: Millilitres per litre
+                unitOfMeasurementSymbol: ml/L
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UMGL/?_profile=nvs&_mediatype=application/rdf+xml                
 
-           virt-combined-sensor-paloma-oxygensat:
+          virt-combined-sensor-paloma-oxygensat:
             ObservedPropertyName: OOXSAT
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/DOXY/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: Dissolved oxygen parameters in the water column
@@ -204,12 +195,13 @@ firmwareVersions:
                 unitOfMeasurementSymbol: %
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPCT/?_profile=nvs&_mediatype=application/rdf+xml
 
-           virt-combined-sensor-paloma-turbidity:
+          virt-combined-sensor-paloma-turbidity:
             ObservedPropertyName: TURB1
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/R03/current/TURBIDITY/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: seawater turbidity
             # - ObservedPropertyIso: 'unknown'
             observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            # TODO confirm unitOfMeasurement
             unitOfMeasurement:
                 unitOfMeasurementName: Nephelometric Turbidity Units 
                 unitOfMeasurementSymbol: NTU
