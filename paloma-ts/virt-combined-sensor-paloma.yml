@@ -208,7 +208,7 @@ firmwareVersions:
                 unitOfMeasurementDefinition: Nephelometric Turbidity Units
 
                 
-        codec: virt-combined-sensor-paloma-01A.yml
+        codec: virt-combined-sensor-codec.yml
         
       
       #B:
