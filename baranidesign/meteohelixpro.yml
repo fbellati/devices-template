@@ -1,7 +1,7 @@
 uid: meteohelixpro
 deviceName: meteohelixpro
 partNumber: unknown
-description: MeteoHelix Pro and MeteoWind
+description: MeteoHelix Pro
 
 # MANDATORY Physical or virtual
 sensorType: phyisical
