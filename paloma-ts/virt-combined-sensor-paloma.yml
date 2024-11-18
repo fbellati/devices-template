@@ -116,7 +116,7 @@ firmwareVersions:
         # Unique identifier of the profile (lowercase, alphanumeric with dashes, max 36 characters)
         sensorComponents:
 
-          virt-combined-sensor-paloma-wtemp:
+          virt-combined-sensor-paloma-wtemp3:
             ObservedPropertyName: TEMP
             ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/TEMP/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: Temperature of the water column
@@ -127,7 +127,29 @@ firmwareVersions:
                 unitOfMeasurementSymbol: degC
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPAA/?_profile=nvs&_mediatype=application/rdf+xml
 
-          virt-combined-sensor-paloma-cond:
+          virt-combined-sensor-paloma-wtemp15:
+            ObservedPropertyName: TEMP
+            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/TEMP/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Temperature of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Degrees Celsius
+                unitOfMeasurementSymbol: degC
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPAA/?_profile=nvs&_mediatype=application/rdf+xml
+
+          virt-combined-sensor-paloma-wtemp25:
+            ObservedPropertyName: TEMP
+            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/TEMP/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Temperature of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Degrees Celsius
+                unitOfMeasurementSymbol: degC
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPAA/?_profile=nvs&_mediatype=application/rdf+xml
+
+          virt-combined-sensor-paloma-cond3:
             ObservedPropertyName: COND
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/CNDC/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: Electrical conductivity of the water column
@@ -137,6 +159,29 @@ firmwareVersions:
                 unitOfMeasurementName: Siemens per metre
                 unitOfMeasurementSymbol: S/m
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
+
+          virt-combined-sensor-paloma-cond15:
+            ObservedPropertyName: COND
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/CNDC/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Electrical conductivity of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Siemens per metre
+                unitOfMeasurementSymbol: S/m
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
+
+          virt-combined-sensor-paloma-cond25:
+            ObservedPropertyName: COND
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/CNDC/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Electrical conductivity of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Siemens per metre
+                unitOfMeasurementSymbol: S/m
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
+
 
           virt-combined-sensor-paloma-pressure:
             ObservedPropertyName: PRES
