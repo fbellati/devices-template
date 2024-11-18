@@ -1,5 +1,5 @@
 uid: WISPstation
-deviceName: WISPstation
+deviceName: wispstation
 partNumber: unknown
 description: Spectroradiometer, mesaure water living reflectance, wavelenght range 350-900nm
 
@@ -121,6 +121,6 @@ firmwareVersions:
               unitOfMeasurementSymbol: [sr⁻¹]
               unitOfMeasurementDefinition: https://qudt.org/vocab/unit/SR
         
-        codec: WISPstation.yml
+        codec: wispstation-codec.yml
 
 

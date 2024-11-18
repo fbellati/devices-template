@@ -11,11 +11,6 @@ vendors:
     vendorID: 100
     website: https://www.comune.venezia.it/
 
-  - uid: paloma-ts
-    manufacturer: CNR-ISMAR TS
-    vendorID: 105
-    website: https://www.ismar.cnr.it/cosa-facciamo/infrastrutture-oceanografiche/meda-paloma/
-
   - uid: waterinsight
     manufacturer: Water Insight
     vendorID: 105
@@ -45,3 +40,18 @@ vendors:
     manufacturer: Gill Instruments Limited
     vendorID: 106
     website: https://gillinstruments.com/
+
+  - uid: paloma-ts
+    manufacturer: CNR-ISMAR TS
+    vendorID: 107
+    website: https://www.ismar.cnr.it/cosa-facciamo/infrastrutture-oceanografiche/meda-paloma/
+    
+  - uid: baranidesign
+    manufacturer: BARANI DESIGN Technologies s.r.o.
+    vendorID: 108
+    website: https://allmeteo.com/
+    
+  - uid: campbellsci
+    manufacturer: Campbell Scientific, Inc.
+    vendorID: 109
+    website: https://www.campbellsci.com/
