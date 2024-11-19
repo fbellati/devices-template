@@ -160,17 +160,6 @@ firmwareVersions:
                 unitOfMeasurementSymbol: S/m
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
 
-          virt-combined-sensor-paloma-cond15:
-            ObservedPropertyName: COND
-            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/CNDC/?_profile=nvs&_mediatype=application/rdf+xml
-            ObservedPropertyDescription: Electrical conductivity of the water column
-            # - ObservedPropertyIso: 'unknown'
-            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
-            unitOfMeasurement:
-                unitOfMeasurementName: Siemens per metre
-                unitOfMeasurementSymbol: S/m
-                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
-
           virt-combined-sensor-paloma-cond25:
             ObservedPropertyName: COND
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/CNDC/?_profile=nvs&_mediatype=application/rdf+xml
@@ -182,8 +171,7 @@ firmwareVersions:
                 unitOfMeasurementSymbol: S/m
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UECA/?_profile=nvs&_mediatype=application/rdf+xml                
 
-
-          virt-combined-sensor-paloma-pressure:
+          virt-combined-sensor-paloma-pressure3:
             ObservedPropertyName: PRES
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/AHGT/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: {vardesc}
@@ -194,7 +182,29 @@ firmwareVersions:
                 unitOfMeasurementSymbol: dbar
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPDB/?_profile=nvs&_mediatype=application/rdf+xml
 
-          virt-combined-sensor-paloma-salinity:
+          virt-combined-sensor-paloma-pressure25:
+            ObservedPropertyName: PRES
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/AHGT/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: {vardesc}
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Decibars
+                unitOfMeasurementSymbol: dbar
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/UPDB/?_profile=nvs&_mediatype=application/rdf+xml
+
+          virt-combined-sensor-paloma-salinity3:
+            ObservedPropertyName: SAL
+            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/PSAL/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Salinity of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            # TODO confirm unitOfMeasurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Practical salinity units
+                unitOfMeasurementSymbol: PSU
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/PSUX/?_profile=nvs&_mediatype=application/rdf+xml
+          virt-combined-sensor-paloma-salinity25:
             ObservedPropertyName: SAL
             ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/PSAL/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: Salinity of the water column
@@ -206,7 +216,31 @@ firmwareVersions:
                 unitOfMeasurementSymbol: PSU
                 unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/PSUX/?_profile=nvs&_mediatype=application/rdf+xml
  
-          virt-combined-sensor-paloma-density:
+           virt-combined-sensor-paloma-salinity25:
+            ObservedPropertyName: SAL
+            ObservedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P02/current/PSAL/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Salinity of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            # TODO confirm unitOfMeasurement
+            unitOfMeasurement:
+                unitOfMeasurementName: Practical salinity units
+                unitOfMeasurementSymbol: PSU
+                unitOfMeasurementDefinition: http://vocab.nerc.ac.uk/collection/P06/current/PSUX/?_profile=nvs&_mediatype=application/rdf+xml
+
+          virt-combined-sensor-paloma-density3:
+            ObservedPropertyName: DENS
+            ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/SIGT/?_profile=nvs&_mediatype=application/rdf+xml
+            ObservedPropertyDescription: Density of the water column
+            # - ObservedPropertyIso: 'unknown'
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+            # TODO confirm unitOfMeasurement
+            unitOfMeasurement:
+                unitOfMeasurementName: unknown
+                unitOfMeasurementSymbol: uk
+                unitOfMeasurementDefinition: unknown
+
+          virt-combined-sensor-paloma-density25:
             ObservedPropertyName: DENS
             ObservedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P02/current/SIGT/?_profile=nvs&_mediatype=application/rdf+xml
             ObservedPropertyDescription: Density of the water column
