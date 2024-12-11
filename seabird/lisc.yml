@@ -1,7 +1,6 @@
 uid: lisc
-deviceName: lisc_datalogger
+deviceName: multiSeaBirdEquipment
 partNumber: unknown or various
-####seralNumber: 'xxxxxxx'
 description: Interfaccia datalogger di rete con porta ethernet e seriali collegate agli SBE
 
 # Physical or virtual (Mandatory!)
@@ -48,33 +47,18 @@ power:
 operatingConditions:
   # Temperature (Celsius)
   temperature:
-    min: -30
-    max: 65
+    min:
+    max:
   # Relative humidity (fraction of 1)
   relativeHumidity:
-    min: 0
-    max: 0.85
-
-# Sensor declaration here is optional, only for brief metadata
-# Sensors that this device features (optional)
-# Valid values are:
-# 4-20 ma, accelerometer, altitude, analog input, auxiliary, barometer, battery, button, bvoc, co, co2, conductivity,
-# current, digital input, dissolved oxygen, distance, dust, energy, gps, gyroscope, h2s, humidity, iaq, level, light,
-# lightning, link, magnetometer, moisture, motion, no, no2, o3, particulate matter, ph, pir, pm2.5, pm10, potentiometer,
-# power, precipitation, pressure, proximity, pulse count, pulse frequency, radar, rainfall, rssi, smart valve, snr, so2,
-# solar radiation, sound, strain, surface temperature, temperature, tilt, time, tvoc, uv, vapor pressure, velocity,
-# vibration, voltage, water potential, water, weight, wifi ssid, wind direction, wind speed.
-sensors:
-  - precipitation
-  - klfjlsdjfl
-  - fsdjflkjlsd
-
+    min:
+    max:
 
 # Compliances dimensions are optional
 compliances:
   standards: 'unknown'
   safety_norm: 'unknown'
-  ipCode: IP40H
+  ipCode:
   
 # Hardware versions (optional, use when you have revisions)
 hwversions:
@@ -106,11 +90,5 @@ firmwareVersions:
                 unitOfMeasurementSymbol: C
                 unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UPAA/
         codec: lisc01.yml
-        
-      
-      #B:
-        #id:
-        #codec:        
-      
 
 
