@@ -1,0 +1,248 @@
+# This is the description file in YAML format of a single template of a single device.
+# The device can be a single sensor device or a device made by multiple sensors.
+# Every sensor must have a ObservedProperty and unit of Measure.
+# This file support the concept TEMPLATE OF DEVICE.
+# The template of a device define various characteristics of the device and support a single model with differents firmware and profiles (see later).
+# The properties described HERE (on the template) are indipendent from the single INSTANCE of a device like one installed in a particular site. Sothese characteristics are generic and refere to all the sensor with same manufacturer and model.
+
+# This is the version of the description file
+fileFormatVersion: 2.0
+
+# deviceName is a string, CANNOT include spaces, max 255 characters, must correspond to the filename of sensor
+# On SensorThings API is a part of the "name" of a -sensor entity- (please pay attention to the concept DEVICE (here) --> SENSOR (on sensorthings API)
+# Multiple datastreams (on SensorThings API) can refer to the same device because one device can have multiple sensors and one datastream refer to a one and only one ObservedProperty
+# string - MANDATORY
+deviceName: example-laserstar-W321
+
+# deviceDescription is a string, can include spaces, max 255 characters, normally is a general description of general/non installed sensor
+# On SensorThings API is the description property of a sensor entity
+# string - MANDATORY
+deviceDescription: 3-axis ultrasonic anemometer with 50Hz output rate
+
+# This normally is the "specific model" of device, if exist - Leave void if not exist
+# string - OPTIONAL
+devicePartNumber: W321/EU
+
+# Describe if the device is physical or can be something like a external database or web service (virtual)
+# string - MANDATORY: "physical" or "virtual"
+deviceType: phyisical
+
+# This define a general classification of the device.
+# You can search the class of your instruments here: https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/instruments?gtm_scheme=instruments
+# URL - OPTIONAL
+deviceClass: https://gcmd.earthdata.nasa.gov/kms/concept/d0cf9340-dc51-447f-a151-f6cdad265d9a?format=rdf
+
+# Some reference of the characteristics of the device
+# leave blank if unknow
+# strings - OPTIONAL
+productURL: 'https://gillinstruments.com/compare-3-axis-anemometers/research-3axis/#researchdatasheet'
+datasheetURL: 'https://gillinstruments.com/1210-0012-r3-50-iss-3-datasheet/'
+imageURL: 'https://gillinstruments.com/wp-content/uploads/2021/08/HS-50-1.webp'
+
+# This is the lowest frequecy of download of data from the instruments, defined by the OEM producer of the device
+# Is expressed in minutes of times between two single read of data from the device
+# integer - MANDATORY
+minimumReportingInterval: 30
+
+# These data are optional
+# dataType can be 'istantaneous', 'cumulative measurement', 'various'
+# Can be 'various' if the sensor is made by multiple sensor working following different procedures
+# leave blank if unknow
+# OPTIONAL
+temporaryStorage: yes
+dataType: istantaneous
+outputDataFormat: csv
+
+# The description of materials used on the device, leave blank if unknow
+# leave blank if unknow
+# string - OPTIONAL
+material: aluminium/carbon fibre construction
+
+# the dimensions that describe the sensor are in cm. and weight in kg.
+# leave blank if unknow
+# floatingpoint32 - OPTIONAL
+dimensions:
+  width: 0.0
+  height: 75.0
+  lenght: 0.0
+  diameter: 24.0
+  weight: 1.0
+
+# Power dimensions useful in case of maintenance, there is no constraints in description
+# leave blank if unknow. You can add your preferred keys under this section.
+# strings - OPTIONAL
+power:
+  electricalCurrentType: DC
+  inputPowerRange: 9-30 VDC
+  batteryNominalOutput:
+  batteryChargingVoltage:
+  batteryChargingCurrent:
+  yourPreferredKey:
+  
+# Operating condition are optional
+# leave blank if unknow
+# integer and floatingpoint values - OPTIONAL
+operatingConditions:
+  # temperature in celsius degree
+  temperature:
+    min: -40
+    max: 60
+  # relative humidity (fraction of 1)
+  relativeHumidity:
+    min: 0
+    max: 0.99
+    
+# Compliances informations
+# leave blank if unknow
+# strings - OPTIONAL
+compliances:
+  standards:
+  safety_norm: 'BS EN 50081-1: 1992 (Emissions), BS EN 50082-1: 1997 (Immunity)'
+  ipCode: 'IP65'
+  
+# Hardware versions - This refer to different hardware version of the same device, is similar, but can be different, of the PartNumber.
+# This part of the description refer to the possibility to have different firmware (for different hardware version, on not) of the same device with the same product model.
+# If this property is unknow you can use one of your choice (like '1.0.0'), it's only for reference.
+# string and integer - MANDATORY (at least one!)
+hwversions:
+  - version: 'V1.0.0'
+    numeric: 1
+
+# Firmware versions and profiles (at least one of each one is mandatory)
+# For every different firmware version a device can have different features, different Observed Properties and/or can change the file format of output, changing the implementation driver for the normalization of data to to be inserted in the observations on SensorThings API database. So you shall define at least one firmware version and one profile.
+# Sometimes you can have different profiles for the same device with the same firmware, e.g. when you have modular device with only a subset of sensors installed on it. If you do not know others 'profiles' for you device you can simply define a 'default' profile like in the example.
+# When you will declare an instance for a sensor you will shall specify the corresponding firmware/profile version you want to use.
+# You CAN'T leave this part of the description void.
+
+firmwareVersions:
+  # Firmware version
+  # string and integer - MANDATORY (at least one!)
+  V2.2.0:
+    numeric: 1
+  
+    # Corresponding hardware versions compatible with the firmware defined above
+    # string - OPTIONAL
+    hardwareVersions:
+      - 'V1.0.0'
+
+    profiles:
+      # Unique identifier of the profile (lowercase, alphanumeric with dashes, max 36 characters)
+      # In this example the name of the profile is "default". You can define multiple profiles per single version of same firmware
+      # string - MANDATORY
+      default:
+        # sensorComponents define every single measurement sensor installed on the device. For virtual sensors is the list of the observedProperties you can read from the external datasource. You must define at least one sensor component.
+        # Every component shall define:
+        #  observedPropertyName, 
+        #  observedPropertyDefinition,
+        #  observedPropertyDescription,
+        #  observedPropertyProperties, (IS OPTIONAL!!)
+        #  observedPropertyIso,
+        #  observationType,
+        #  unitOfMeasurement,
+        #    unitOfMeasurementName,
+        #    unitOfMeasurementSymbol,
+        #    unitOfMeasurementDefinition
+        # NOTES:
+        # --> You can use the NERC or others vocabularies to populate observedPropertyDefinition and unitOfMeasurementDefinition
+        # --> The observationType can have a limited number of values defined from OGC sensorthings API
+        # see here: https://docs.ogc.org/is/15-078r6/15-078r6.html#table_12
+        # OM_CategoryObservation  http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_CategoryObservation    URI
+        # OM_CountObservation     http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_CountObservation       integer
+        # OM_Measurement          http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement            double
+        # OM_Observation          http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation            Any
+        # OM_TruthObservation     http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_TruthObservation       boolean
+        # --> The observedPropertyProcedure is the procedure referred to method of measurement. If not necessary you can leave blank or not use this key (OPTIONAL)
+        # --> "codec" key string: Is specific for every profile of every firmware. This define the file where is stored the link of the codec that transform the raw data from the datasource and normalize them in a format compatible with sensorthings api.
+        # The accuracy is defined as: https://vocab.nerc.ac.uk/collection/W01/current/007/
+
+        sensorComponents:
+        # The name of the sensor is a reference name used in the instance of sensor
+        # The name of the component is not reported in any part of the sensorthings api database, refere to the INSTANCE description for this.
+        # All the sub-properties defined are strictly MANDATORY.
+        # string - at least one component is MANDATORY
+          u_axis_velocity_sensor:
+            # MANDATORY
+            observedPropertyName: x_wind
+            observedPropertyDefinition: http://vocab.nerc.ac.uk/collection/P07/current/CFSN0042/
+            observedPropertyDescription: "x" indicates a vector component along the grid x-axis, positive with increasing x. Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.)
+            observedPropertyProperties: {"note":"The X-Direction is aligned with the N spar"}
+            # MANDATORY
+            unitOfMeasurement:
+              unitOfMeasurementName: Metres per second
+              unitOfMeasurementSymbol: m/s
+              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
+
+            # OPTIONAL
+            accuracy:
+              observationAccuracy: 0.5
+              observationAccuracyUoSymbol: '%'
+              observationAccuracyUoMDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UUUU/
+
+            # OPTIONAL
+            resolution:
+              observationResolution: 0.01
+              observationResolutionSymbol: m/s
+              observationUoMDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
+
+            # MANDATORY
+            observedPropertyProcedure:
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+
+
+          v_axis_velocity_sensor:
+            # MANDATORY
+            observedPropertyName: y_wind
+            observedPropertyDefinition: https://vocab.nerc.ac.uk/collection/P07/current/CFSN0043/
+            observedPropertyDescription: "y" indicates a vector component along the grid y-axis, positive with increasing y. Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.)
+            observedPropertyProperties: {"note":"The X-Direction si aligned with the N spar"}
+            unitOfMeasurement:
+              unitOfMeasurementName: Metres per second
+              unitOfMeasurementSymbol: m/s
+              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
+
+            # OPTIONAL
+            accuracy:
+              observationAccuracy: 0.5
+              observationAccuracyUoSymbol: '%'
+              observationAccuracyUoMDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UUUU/
+
+            # OPTIONAL
+            resolution:
+              observationResolution: 0.01
+              observationResolutionSymbol: m/s
+              observationUoMDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
+
+            # MANDATORY
+            observedPropertyProcedure:
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+
+
+          w_axis_velocity_sensor:
+            # MANDATORY
+            observedPropertyName: Upward air velocity
+            observedPropertyDefinition: https://vocab.nerc.ac.uk/standard_name/upward_air_velocity/
+            observedPropertyDescription: A velocity is a vector quantity. "Upward" indicates a vector component which is positive when directed upward (negative downward). Upward air velocity is the vertical component of the 3D air velocity vector. The standard name downward_air_velocity may be used for a vector component with the opposite sign convention.
+              unitOfMeasurementName: Metres per second
+              unitOfMeasurementSymbol: m/s
+              unitOfMeasurementDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
+
+            # OPTIONAL
+            accuracy:
+              observationAccuracy: 0.5
+              observationAccuracyUoSymbol: '%'
+              observationAccuracyUoMDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UUUU/
+
+            # OPTIONAL
+            resolution:
+              observationResolution: 0.01
+              observationResolutionSymbol: m/s
+              observationUoMDefinition: https://vocab.nerc.ac.uk/collection/P06/current/UVAA/
+
+            # MANDATORY
+            observedPropertyProcedure:
+            observationType: http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement
+
+      # string - MANDATORY
+      codec: research-r3-50-codec.yml
+
+
